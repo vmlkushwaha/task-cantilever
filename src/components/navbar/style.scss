@@ -1,0 +1,36 @@
+@import "../../styles/global";
+.navbar {
+  @include flexbox(row, space-between, center);
+  &_left {
+    h1 {
+      @include font-head(2rem);
+    }
+    p {
+      @include font-body(0.85rem, 300, $color-grey);
+    }
+  }
+  &_right {
+    @include flexbox(row, center, center, 1rem);
+    &_profile {
+      @include flexbox(row, center, center, 0.5rem);
+      img {
+        background-color: #ffc145;
+        border-radius: 50%;
+        //   height: 28px;
+        //   width: 28px;
+      }
+      div {
+        @include flexbox(column, start, start);
+        p {
+          line-height: 1rem;
+        }
+        .username {
+          @include font-body(0.85rem, 600, $color-dark);
+        }
+        .account-type {
+          @include font-body(0.95rem, 300, $color-grey);
+        }
+      }
+    }
+  }
+}

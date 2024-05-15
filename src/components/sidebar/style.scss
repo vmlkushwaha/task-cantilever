@@ -1,0 +1,23 @@
+@import "../../styles/global";
+
+.sidebar {
+  position: relative;
+  padding: 2.5rem;
+  height: 100%;
+  &_sidebarItems-container {
+    margin-top: 5rem;
+  }
+  &_upgrade-container {
+    @include flexbox(column, center, center, 0.5rem);
+    width: 75%;
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    .info {
+      @include font-body(0.75rem);
+      text-align: center;
+      margin: 0 15%;
+    }
+  }
+}

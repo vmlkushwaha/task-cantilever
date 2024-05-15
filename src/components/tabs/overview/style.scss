@@ -1,0 +1,186 @@
+@import "../../../styles/styles.scss";
+.overview-container {
+  padding: 1.5rem 0;
+  @include flexbox(row, space-between, start);
+}
+.overview-left {
+  width: 49%;
+}
+.overview-right {
+  width: 49%;
+}
+.cards-container {
+  height: 100%;
+  @include flexbox(row, space-between, start);
+}
+.cards-details {
+  width: 68%;
+  .credit_card-container {
+    @include flexbox();
+    gap: 0.25rem;
+    .credit_card {
+      width: 93%;
+    }
+    .arrow-right {
+      transform: rotate(-180deg);
+    }
+  }
+}
+.cards-seperator {
+  background-color: #e8e8e8;
+  width: 1px;
+  height: 180px;
+  margin-top: 0.75rem;
+  margin-left: 0.85rem;
+}
+.cards-balance {
+  @include flexbox(column);
+  align-items: end;
+  gap: 1.4rem;
+  width: 30%;
+  &-info {
+    @include flexbox(column, end, end, 0.45rem);
+    p {
+      @include font-body(0.8rem, 300, $color-grey);
+    }
+    h2 {
+      @include font-head(0.95rem, 400);
+
+      span {
+        font-size: 0.9rem;
+        margin-right: 0.5rem;
+      }
+    }
+    .current {
+      font-size: 1.55rem;
+      color: #197bbd;
+      font-weight: 500;
+    }
+    .income {
+      color: #439a86;
+    }
+    .outcome {
+      color: #bb4430;
+    }
+  }
+}
+.goals-container {
+  position: relative;
+  .layout_box-content {
+    @include flexbox(row, space-between, center, 0.75rem);
+  }
+  .addNew-goal {
+    position: absolute;
+    top: 17px;
+    left: 13%;
+  }
+  .swipe-right {
+    transform: rotate(180deg);
+    cursor: pointer;
+    width: 12px;
+  }
+}
+.goals_cards-container {
+  @include flexbox(row, space-between);
+  flex-grow: 1;
+  .goals_card {
+    @include flexbox(column, start, start, 1.8rem);
+    &-upper {
+      h2 {
+        @include font-head(1.2rem, 500);
+      }
+      p {
+        @include font-body(0.7rem, 300, $color-grey);
+      }
+    }
+    &-down {
+      p {
+        @include font-body(1rem, 300);
+      }
+      img {
+        width: 24px;
+      }
+    }
+  }
+}
+
+//table
+.table-container {
+  border-collapse: collapse;
+  width: 100%;
+
+  thead {
+    @include font-body(0.95rem, 300, $color-grey);
+    th {
+      font-weight: 300;
+      text-align: left;
+    }
+    th:nth-last-child(1) {
+      text-align: right;
+    }
+  }
+  tbody {
+    @include font-body(0.95rem, 300);
+    tr {
+      border-collapse: collapse;
+      border-bottom: 0.5px solid #ececec;
+      td {
+        padding: 0.5rem 0;
+        img {
+          background-color: #efefef;
+          border-radius: 6px;
+          padding: 0.35rem;
+          width: 26px;
+        }
+      }
+      td:nth-child(1) {
+        @include flexbox(row, start, start, 0.5rem);
+      }
+      td:nth-child(2),
+      td:nth-child(3) {
+        color: $color-grey;
+      }
+      td:nth-last-child(1) {
+        font-weight: 500;
+        text-align: right;
+      }
+    }
+  }
+}
+
+//statistics
+.statistics-container {
+  width: 100%;
+  @include flexbox(column, space-between, start, 1.25rem);
+  .statistics-card {
+    width: 100%;
+    @include flexbox(row, space-between, start);
+    img {
+      padding: 0.5rem;
+      border-radius: 3px;
+      box-shadow: 0px 0px 1px 0px #0000000a, 0px 2px 6px 0px #0000000a,
+        0px 16px 24px 0px #0000000f;
+    }
+    p {
+      margin-top: -0.5rem;
+      @include font-body(1.2rem, 500, $color-dark);
+    }
+  }
+}
+
+//transaction users
+.avatar-container {
+  @include flexbox(row, start);
+  gap: 1rem;
+}
+
+.transaction-input-container {
+  @include flexbox(row, start, center, 1rem);
+  margin-top: 0.75rem;
+  input {
+    border: 1px solid #197bbd;
+    border-radius: 8px;
+    padding: 0.65rem 0.75rem;
+    @include font-body(1rem, 300);
+  }
+}
